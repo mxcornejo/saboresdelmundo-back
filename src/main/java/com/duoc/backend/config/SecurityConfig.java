@@ -24,6 +24,8 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.List;
 
+import org.springframework.http.HttpMethod;
+
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -43,8 +45,9 @@ public class SecurityConfig {
 
                 // Control de acceso a URLs
                 .authorizeHttpRequests(auth -> auth
-                        // API pública: solo el endpoint de login
+                        // API pública: login y lectura de recetas
                         .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/recetas/**").permitAll()
                         // Todo lo demás requiere autenticación JWT
                         .anyRequest().authenticated())
 
