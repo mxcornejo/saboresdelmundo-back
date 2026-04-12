@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -47,7 +46,7 @@ public class RecetaService {
             results = results.stream()
                     .filter(r -> r.getIngredientes().stream()
                             .anyMatch(i -> i.toLowerCase().contains(ingLower)))
-                    .collect(Collectors.toList());
+                    .toList();
         }
 
         return results;

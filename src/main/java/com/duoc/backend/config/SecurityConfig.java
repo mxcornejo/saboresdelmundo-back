@@ -48,7 +48,6 @@ public class SecurityConfig {
                         // API pública: login y lectura de recetas
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/recetas/**").permitAll()
-                        // Todo lo demás requiere autenticación JWT
                         .anyRequest().authenticated())
 
                 // Sesión stateless: Spring Security no crea ni usa HttpSession
