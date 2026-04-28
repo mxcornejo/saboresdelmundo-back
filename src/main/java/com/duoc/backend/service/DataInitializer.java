@@ -36,6 +36,7 @@ public class DataInitializer implements CommandLineRunner {
         private String userPassword;
 
         @Override
+        @Transactional
         public void run(String... args) {
                 initUsers();
                 initRecipes();
@@ -52,8 +53,7 @@ public class DataInitializer implements CommandLineRunner {
                 System.out.println(">>> Usuarios de prueba cargados.");
         }
 
-        @Transactional
-        public void initRecipes() {
+        private void initRecipes() {
                 if (recipeRepository.count() > 0)
                         return;
 

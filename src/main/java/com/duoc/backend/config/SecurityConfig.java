@@ -35,6 +35,8 @@ public class SecurityConfig {
     private final UserDetailsServiceImpl userDetailsService;
 
     @Bean
+    @SuppressWarnings("java:S4502") // API REST stateless con JWT: autenticación por header Authorization, sin
+                                    // cookies de sesión → CSRF no aplica
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 // CSRF deshabilitado: API REST stateless con JWT no lo requiere
