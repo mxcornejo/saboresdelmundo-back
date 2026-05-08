@@ -47,9 +47,11 @@ public class SecurityConfig {
 
                 // Control de acceso a URLs
                 .authorizeHttpRequests(auth -> auth
-                        // API pública: login y lectura de recetas
+                        // API pública: login, registro y lectura de recetas/comentarios
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/recetas/**").permitAll()
+                        // Solo admins pueden acceder a la API de administración
+                        .requestMatchers("/api/admin/**").hasRole("ADMIN")
                         // Todo lo demás requiere autenticación JWT
                         .anyRequest().authenticated())
 

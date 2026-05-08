@@ -1,10 +1,12 @@
 package com.duoc.backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,7 +52,29 @@ public class Recipe {
 
     private String imagenUrl;
 
+    private String videoUrl;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "receta_media", joinColumns = @JoinColumn(name = "receta_id"))
+    @Column(name = "media_url")
+    private List<String> mediaUrls = new ArrayList<>();
+
     private int popularidad;
 
     private boolean reciente;
+
+    @ManyToOne(fetch = FetchType.EAGER, optional = true)
+    @JoinColumn(name = "autor_id", nullable = true)
+    @JsonIgnoreProperties({ "password", "enabled", "favoriteRecipes", "role" })
+    private User autor;
+
+    @Column(nullable = true, updatable = false)
+    private LocalDateTime createdAt;
+
+    @PrePersist
+    public void prePersist() {
+        if (this.createdAt == null) {
+            this.createdAt = LocalDateTime.now();
+        }
+    }
 }
