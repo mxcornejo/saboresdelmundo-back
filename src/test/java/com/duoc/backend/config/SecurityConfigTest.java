@@ -4,6 +4,7 @@ import com.duoc.backend.repository.RecipeRepository;
 import com.duoc.backend.repository.UserRepository;
 import com.duoc.backend.security.JwtAuthFilter;
 import com.duoc.backend.security.UserDetailsServiceImpl;
+import com.duoc.backend.service.CommentService;
 import com.duoc.backend.service.JwtService;
 import com.duoc.backend.service.RecetaService;
 import org.junit.jupiter.api.Test;
@@ -62,6 +63,12 @@ class SecurityConfigTest {
 
     @MockitoBean
     private RecetaService recetaService;
+
+    @MockitoBean
+    private CommentService commentService;
+
+    @MockitoBean
+    private PasswordEncoder passwordEncoder;
 
     @Test
     void apiRecetasGet_retorna200() throws Exception {

@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Endpoints de administración — solo accesibles con ROLE_ADMIN (protegido en
@@ -30,7 +29,7 @@ public class AdminController {
         List<UserDto> users = userRepository.findAll().stream()
                 .map(u -> new UserDto(u.getId(), u.getUsername(), u.getFullName(),
                         u.getEmail(), u.getRole(), u.isEnabled()))
-                .collect(Collectors.toList());
+                .toList();
         return ResponseEntity.ok(users);
     }
 

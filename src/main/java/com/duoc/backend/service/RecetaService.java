@@ -13,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -21,6 +20,9 @@ public class RecetaService {
 
     private final RecipeRepository recipeRepository;
     private final UserRepository userRepository;
+
+    private static final String MSG_USUARIO_NO_ENCONTRADO = "Usuario no encontrado.";
+    private static final String MSG_RECETA_NO_ENCONTRADA = "Receta no encontrada.";
 
     public List<Recipe> getAll() {
         return recipeRepository.findAll();
@@ -52,7 +54,7 @@ public class RecetaService {
             results = results.stream()
                     .filter(r -> r.getIngredientes().stream()
                             .anyMatch(i -> i.toLowerCase().contains(ingLower)))
-                    .collect(Collectors.toList());
+                    .toList();
         }
 
         return results;
@@ -61,7 +63,7 @@ public class RecetaService {
     /** Retorna las recetas publicadas por el usuario autenticado. */
     public List<Recipe> getMisRecetas(String username) {
         User autor = userRepository.findByUsername(username)
-                .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado."));
+                .orElseThrow(() -> new IllegalArgumentException(MSG_USUARIO_NO_ENCONTRADO));
         return recipeRepository.findByAutorId(autor.getId());
     }
 
@@ -72,7 +74,7 @@ public class RecetaService {
             throw new IllegalArgumentException("El nombre de la receta es obligatorio.");
         }
         User autor = userRepository.findByUsername(username)
-                .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado."));
+                .orElseThrow(() -> new IllegalArgumentException(MSG_USUARIO_NO_ENCONTRADO));
 
         Recipe recipe = new Recipe();
         mapRequestToRecipe(req, recipe);
@@ -85,7 +87,7 @@ public class RecetaService {
     @Transactional
     public Recipe updateRecipe(Long id, RecipeRequest req, String username, boolean isAdmin) {
         Recipe recipe = recipeRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Receta no encontrada."));
+                .orElseThrow(() -> new IllegalArgumentException(MSG_RECETA_NO_ENCONTRADA));
 
         boolean isOwner = recipe.getAutor() != null
                 && recipe.getAutor().getUsername().equals(username);
@@ -100,7 +102,7 @@ public class RecetaService {
     @Transactional
     public void deleteRecipe(Long id, String username, boolean isAdmin) {
         Recipe recipe = recipeRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Receta no encontrada."));
+                .orElseThrow(() -> new IllegalArgumentException(MSG_RECETA_NO_ENCONTRADA));
 
         boolean isOwner = recipe.getAutor() != null
                 && recipe.getAutor().getUsername().equals(username);
@@ -114,9 +116,9 @@ public class RecetaService {
     @Transactional
     public boolean toggleFavorite(Long recetaId, String username) {
         User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado."));
+                .orElseThrow(() -> new IllegalArgumentException(MSG_USUARIO_NO_ENCONTRADO));
         Recipe recipe = recipeRepository.findById(recetaId)
-                .orElseThrow(() -> new IllegalArgumentException("Receta no encontrada."));
+                .orElseThrow(() -> new IllegalArgumentException(MSG_RECETA_NO_ENCONTRADA));
 
         if (user.getFavoriteRecipes().contains(recipe)) {
             user.getFavoriteRecipes().remove(recipe);
@@ -132,7 +134,7 @@ public class RecetaService {
     /** Retorna las recetas favoritas del usuario autenticado. */
     public List<Recipe> getFavorites(String username) {
         User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado."));
+                .orElseThrow(() -> new IllegalArgumentException(MSG_USUARIO_NO_ENCONTRADO));
         return new ArrayList<>(user.getFavoriteRecipes());
     }
 

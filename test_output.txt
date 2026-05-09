@@ -1,0 +1,204 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< com.duoc:backend >--------------------------
+[INFO] Building backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ backend ---
+[INFO] argLine set to "-javaagent:/Users/manucornejo/.m2/repository/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=/Users/manucornejo/Documents/_duoc/bimestre4/SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE_001A/backend/target/jacoco.exec"
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ backend ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ backend ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.duoc.backend.BackendApplicationTest
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (/Users/manucornejo/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.107 s -- in com.duoc.backend.BackendApplicationTest
+[INFO] Running com.duoc.backend.config.SecurityConfigTest
+22:29:25.983 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.duoc.backend.config.SecurityConfigTest]: SecurityConfigTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+22:29:26.114 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.duoc.backend.BackendApplication for test class com.duoc.backend.config.SecurityConfigTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.3)
+
+2026-05-08T22:29:26.464-04:00  INFO 5968 --- [           main] c.d.backend.config.SecurityConfigTest    : Starting SecurityConfigTest using Java 21.0.10 with PID 5968 (started by manucornejo in /Users/manucornejo/Documents/_duoc/bimestre4/SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE_001A/backend)
+2026-05-08T22:29:26.465-04:00  INFO 5968 --- [           main] c.d.backend.config.SecurityConfigTest    : No active profile set, falling back to 1 default profile: "default"
+2026-05-08T22:29:27.364-04:00  INFO 5968 --- [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-05-08T22:29:27.365-04:00  WARN 5968 --- [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-05-08T22:29:27.792-04:00  INFO 5968 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-05-08T22:29:27.792-04:00  INFO 5968 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-05-08T22:29:27.793-04:00  INFO 5968 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-05-08T22:29:27.817-04:00  INFO 5968 --- [           main] c.d.backend.config.SecurityConfigTest    : Started SecurityConfigTest in 1.642 seconds (process running for 3.615)
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.261 s -- in com.duoc.backend.config.SecurityConfigTest
+[INFO] Running com.duoc.backend.security.UserDetailsServiceImplTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s -- in com.duoc.backend.security.UserDetailsServiceImplTest
+[INFO] Running com.duoc.backend.security.JwtAuthFilterTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.161 s -- in com.duoc.backend.security.JwtAuthFilterTest
+[INFO] Running com.duoc.backend.entity.RecipeTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.duoc.backend.entity.RecipeTest
+[INFO] Running com.duoc.backend.entity.CommentTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in com.duoc.backend.entity.CommentTest
+[INFO] Running com.duoc.backend.controller.RecetaControllerTest
+2026-05-08T22:29:28.369-04:00  INFO 5968 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.duoc.backend.controller.RecetaControllerTest]: RecetaControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-08T22:29:28.382-04:00  INFO 5968 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.duoc.backend.BackendApplication for test class com.duoc.backend.controller.RecetaControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.3)
+
+2026-05-08T22:29:28.400-04:00  INFO 5968 --- [           main] c.d.b.controller.RecetaControllerTest    : Starting RecetaControllerTest using Java 21.0.10 with PID 5968 (started by manucornejo in /Users/manucornejo/Documents/_duoc/bimestre4/SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE_001A/backend)
+2026-05-08T22:29:28.401-04:00  INFO 5968 --- [           main] c.d.b.controller.RecetaControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2026-05-08T22:29:28.560-04:00  WARN 5968 --- [           main] r$InitializeUserDetailsManagerConfigurer : Found 2 UserDetailsService beans, with names [inMemoryUserDetailsManager, com.duoc.backend.security.UserDetailsServiceImpl#0]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2026-05-08T22:29:28.581-04:00  WARN 5968 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: d482d662-a8c0-4107-ab00-c2d2e900536b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-05-08T22:29:28.585-04:00  INFO 5968 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-05-08T22:29:28.585-04:00  INFO 5968 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-05-08T22:29:28.585-04:00  INFO 5968 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-05-08T22:29:28.591-04:00  INFO 5968 --- [           main] c.d.b.controller.RecetaControllerTest    : Started RecetaControllerTest in 0.207 seconds (process running for 4.389)
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.408 s -- in com.duoc.backend.controller.RecetaControllerTest
+[INFO] Running com.duoc.backend.controller.CommentControllerTest
+2026-05-08T22:29:28.777-04:00  INFO 5968 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.duoc.backend.controller.CommentControllerTest]: CommentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-08T22:29:28.782-04:00  INFO 5968 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.duoc.backend.BackendApplication for test class com.duoc.backend.controller.CommentControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.3)
+
+2026-05-08T22:29:28.798-04:00  INFO 5968 --- [           main] c.d.b.controller.CommentControllerTest   : Starting CommentControllerTest using Java 21.0.10 with PID 5968 (started by manucornejo in /Users/manucornejo/Documents/_duoc/bimestre4/SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE_001A/backend)
+2026-05-08T22:29:28.798-04:00  INFO 5968 --- [           main] c.d.b.controller.CommentControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2026-05-08T22:29:28.939-04:00  WARN 5968 --- [           main] r$InitializeUserDetailsManagerConfigurer : Found 2 UserDetailsService beans, with names [inMemoryUserDetailsManager, com.duoc.backend.security.UserDetailsServiceImpl#0]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2026-05-08T22:29:28.948-04:00  WARN 5968 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: aa67199e-f38b-4b17-b9d7-23e986300d60
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-05-08T22:29:28.951-04:00  INFO 5968 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-05-08T22:29:28.951-04:00  INFO 5968 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-05-08T22:29:28.951-04:00  INFO 5968 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-05-08T22:29:28.957-04:00  INFO 5968 --- [           main] c.d.b.controller.CommentControllerTest   : Started CommentControllerTest in 0.172 seconds (process running for 4.754)
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.207 s -- in com.duoc.backend.controller.CommentControllerTest
+[INFO] Running com.duoc.backend.controller.AuthControllerTest
+2026-05-08T22:29:28.986-04:00  INFO 5968 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.duoc.backend.controller.AuthControllerTest]: AuthControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-08T22:29:28.990-04:00  INFO 5968 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.duoc.backend.BackendApplication for test class com.duoc.backend.controller.AuthControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.3)
+
+2026-05-08T22:29:29.007-04:00  INFO 5968 --- [           main] c.d.b.controller.AuthControllerTest      : Starting AuthControllerTest using Java 21.0.10 with PID 5968 (started by manucornejo in /Users/manucornejo/Documents/_duoc/bimestre4/SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE_001A/backend)
+2026-05-08T22:29:29.007-04:00  INFO 5968 --- [           main] c.d.b.controller.AuthControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2026-05-08T22:29:29.123-04:00  WARN 5968 --- [           main] r$InitializeUserDetailsManagerConfigurer : Found 2 UserDetailsService beans, with names [inMemoryUserDetailsManager, com.duoc.backend.security.UserDetailsServiceImpl#0]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2026-05-08T22:29:29.142-04:00  WARN 5968 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: ff55ae1a-249b-4bb4-9a30-52c0ae66195e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-05-08T22:29:29.144-04:00  INFO 5968 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-05-08T22:29:29.144-04:00  INFO 5968 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-05-08T22:29:29.144-04:00  INFO 5968 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-05-08T22:29:29.150-04:00  INFO 5968 --- [           main] c.d.b.controller.AuthControllerTest      : Started AuthControllerTest in 0.158 seconds (process running for 4.947)
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.223 s -- in com.duoc.backend.controller.AuthControllerTest
+[INFO] Running com.duoc.backend.controller.AdminControllerTest
+2026-05-08T22:29:29.212-04:00  INFO 5968 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.duoc.backend.controller.AdminControllerTest]: AdminControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-08T22:29:29.216-04:00  INFO 5968 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.duoc.backend.BackendApplication for test class com.duoc.backend.controller.AdminControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.3)
+
+2026-05-08T22:29:29.231-04:00  INFO 5968 --- [           main] c.d.b.controller.AdminControllerTest     : Starting AdminControllerTest using Java 21.0.10 with PID 5968 (started by manucornejo in /Users/manucornejo/Documents/_duoc/bimestre4/SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE_001A/backend)
+2026-05-08T22:29:29.231-04:00  INFO 5968 --- [           main] c.d.b.controller.AdminControllerTest     : No active profile set, falling back to 1 default profile: "default"
+2026-05-08T22:29:29.344-04:00  WARN 5968 --- [           main] r$InitializeUserDetailsManagerConfigurer : Found 2 UserDetailsService beans, with names [inMemoryUserDetailsManager, com.duoc.backend.security.UserDetailsServiceImpl#0]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2026-05-08T22:29:29.353-04:00  WARN 5968 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 5905807b-62ad-4632-9a88-5a89e6c11fb8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-05-08T22:29:29.354-04:00  INFO 5968 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-05-08T22:29:29.354-04:00  INFO 5968 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-05-08T22:29:29.355-04:00  INFO 5968 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-05-08T22:29:29.360-04:00  INFO 5968 --- [           main] c.d.b.controller.AdminControllerTest     : Started AdminControllerTest in 0.142 seconds (process running for 5.158)
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.196 s -- in com.duoc.backend.controller.AdminControllerTest
+[INFO] Running com.duoc.backend.service.RecetaServiceTest
+[INFO] Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 s -- in com.duoc.backend.service.RecetaServiceTest
+[INFO] Running com.duoc.backend.service.CommentServiceTest
+[INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.085 s -- in com.duoc.backend.service.CommentServiceTest
+[INFO] Running com.duoc.backend.service.DataInitializerTest
+>>> Usuarios de prueba cargados.
+>>> 6 recetas iniciales cargadas.
+>>> 6 recetas iniciales cargadas.
+>>> Usuarios de prueba cargados.
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in com.duoc.backend.service.DataInitializerTest
+[INFO] Running com.duoc.backend.service.JwtServiceTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.099 s -- in com.duoc.backend.service.JwtServiceTest
+[INFO] Running com.duoc.backend.exception.GlobalExceptionHandlerTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in com.duoc.backend.exception.GlobalExceptionHandlerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 121, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco:0.8.12:report (report) @ backend ---
+[INFO] Loading execution data file /Users/manucornejo/Documents/_duoc/bimestre4/SEGURIDAD Y CALIDAD EN EL DESARROLLO DE SOFTWARE_001A/backend/target/jacoco.exec
+[INFO] Analyzed bundle 'backend' with 17 classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.655 s
+[INFO] Finished at: 2026-05-08T22:29:30-04:00
+[INFO] ------------------------------------------------------------------------

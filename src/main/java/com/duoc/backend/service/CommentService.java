@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -27,7 +26,7 @@ public class CommentService {
     /** Retorna solo los comentarios aprobados de una receta (acceso público). */
     public List<CommentResponse> getApprovedComments(Long recetaId) {
         return commentRepository.findByRecetaIdAndEstado(recetaId, CommentStatus.APROBADO)
-                .stream().map(this::toResponse).collect(Collectors.toList());
+                .stream().map(this::toResponse).toList();
     }
 
     /** Crea un nuevo comentario en estado PENDIENTE. */
@@ -60,13 +59,13 @@ public class CommentService {
     /** Retorna todos los comentarios aprobados (moderación admin). */
     public List<CommentResponse> getApprovedComments() {
         return commentRepository.findByEstado(CommentStatus.APROBADO)
-                .stream().map(this::toResponse).collect(Collectors.toList());
+                .stream().map(this::toResponse).toList();
     }
 
     /** Retorna todos los comentarios pendientes (moderación). */
     public List<CommentResponse> getPendingComments() {
         return commentRepository.findByEstado(CommentStatus.PENDIENTE)
-                .stream().map(this::toResponse).collect(Collectors.toList());
+                .stream().map(this::toResponse).toList();
     }
 
     /** Aprueba un comentario. Solo admin. */
